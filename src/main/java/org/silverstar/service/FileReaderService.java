@@ -15,22 +15,22 @@ public class FileReaderService {
     private final FileReaderAnswerService fileReaderAnswerService = new FileReaderAnswerService();
     private final FileReaderResultService fileReaderResultService = new FileReaderResultService();
 
-    private List<SurveyBase> getSurveyBase() {
+    public List<SurveyBase> getSurveyBase() {
         return FileReaderUtil.readSurveyFile(FileType.SURVEY.getFileName(),
                 fileReaderSurveyService::convertSurveyBase);
     }
 
-    private List<SurveyQuestion> getSurveyQuestion() {
+    public List<SurveyQuestion> getSurveyQuestion() {
         return FileReaderUtil.readSurveyFile(FileType.SURVEY_QUESTION.getFileName(),
                 fileReaderQuestionService::convertSurveyQuestion);
     }
 
-    private List<SurveyQuestionAnswer> getSurveyQuestionAnswer() {
+    public List<SurveyQuestionAnswer> getSurveyQuestionAnswer() {
         return FileReaderUtil.readSurveyFile(FileType.SURVEY_QUESTION_ANSWER.getFileName(),
                 fileReaderAnswerService::convertSurveyQuestionAnswer);
     }
 
-    private List<SurveyResult> getSurveyResult() {
+    public List<SurveyResult> getSurveyResult() {
         return FileReaderUtil.readSurveyFile(FileType.SURVEY_RESULT.getFileName(),
                 fileReaderResultService::convertSurveyResult);
     }
