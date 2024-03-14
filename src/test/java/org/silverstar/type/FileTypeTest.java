@@ -10,25 +10,17 @@ class FileTypeTest {
     @Test
     @DisplayName("실패 - validateColumns - 파라미터 파일타입이 잘못되었을때")
     void fail_validateColumns_파라미터_파일타입이_잘못되었을때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            FileType.validateColumns(null, null);
-        });
+        Assertions.assertThrows(NullPointerException.class, () -> FileType.validateColumns(null, null));
     }
 
     @Test
     @DisplayName("실패 - validateColumns - 파라미터 String배열이 잘못되었을때")
     void fail_validateColumns_파라미터_String배열이_잘못되었을때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            FileType.validateColumns(FileType.SURVEY, null);
-        });
+        Assertions.assertThrows(NullPointerException.class, () -> FileType.validateColumns(FileType.SURVEY, null));
 
-        Assertions.assertThrows(FileFormatException.class, () -> {
-            FileType.validateColumns(FileType.SURVEY, new String[] {});
-        });
+        Assertions.assertThrows(FileFormatException.class, () -> FileType.validateColumns(FileType.SURVEY, new String[] {}));
 
-        Assertions.assertThrows(FileFormatException.class, () -> {
-            FileType.validateColumns(FileType.SURVEY, new String[] {"string"});
-        });
+        Assertions.assertThrows(FileFormatException.class, () -> FileType.validateColumns(FileType.SURVEY, new String[] {"string"}));
     }
 
 

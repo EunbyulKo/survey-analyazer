@@ -18,9 +18,8 @@ class ResourceInspectQuestionServiceTest {
     @Test
     @DisplayName("실패 - checkDuplicateQuestion - 파라미터 null일때")
     void fail_checkDuplicateQuestion_파라미터가_null_일때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectQuestionService.checkDuplicateQuestion(null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectQuestionService.checkDuplicateQuestion(null));
     }
 
     @Test
@@ -67,17 +66,14 @@ class ResourceInspectQuestionServiceTest {
     @Test
     @DisplayName("실패 - checkSurveyAndQuestion - 파라미터 null일때")
     void fail_checkSurveyAndQuestion_파라미터가_null_일때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectQuestionService.checkSurveyAndQuestion(null, null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectQuestionService.checkSurveyAndQuestion(null, null));
 
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectQuestionService.checkSurveyAndQuestion(Collections.emptyList(), null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectQuestionService.checkSurveyAndQuestion(Collections.emptyList(), null));
 
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectQuestionService.checkSurveyAndQuestion(null, Collections.emptyList());
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectQuestionService.checkSurveyAndQuestion(null, Collections.emptyList()));
     }
 
     @Test

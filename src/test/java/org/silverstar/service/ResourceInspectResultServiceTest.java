@@ -18,9 +18,8 @@ class ResourceInspectResultServiceTest {
     @Test
     @DisplayName("실패 - checkNoResponseResult - 파라미터 null일때")
     void fail_checkNoResponseResult_파라미터가_null_일때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectResultService.checkNoResponseResult(null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectResultService.checkNoResponseResult(null));
     }
 
     @Test
@@ -55,17 +54,14 @@ class ResourceInspectResultServiceTest {
     @Test
     @DisplayName("실패 - checkAnswerAndResult - 파라미터 null일때")
     void fail_checkAnswerAndResult_파라미터가_null_일때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectResultService.checkAnswerAndResult(null, null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectResultService.checkAnswerAndResult(null, null));
 
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectResultService.checkAnswerAndResult(Collections.emptyList(), null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectResultService.checkAnswerAndResult(Collections.emptyList(), null));
 
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectResultService.checkAnswerAndResult(null, Collections.emptyList());
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectResultService.checkAnswerAndResult(null, Collections.emptyList()));
     }
 
     @Test

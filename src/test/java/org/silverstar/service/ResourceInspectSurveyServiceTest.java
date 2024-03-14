@@ -16,9 +16,8 @@ class ResourceInspectSurveyServiceTest {
     @Test
     @DisplayName("실패 - checkDuplicateSurvey - 파라미터 null일때")
     void fail_checkDuplicateSurvey_파라미터가_null_일때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectSurveyService.checkDuplicateSurvey(null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectSurveyService.checkDuplicateSurvey(null));
     }
 
     @Test

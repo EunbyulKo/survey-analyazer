@@ -19,9 +19,8 @@ class ResourceInspectAnswerServiceTest {
     @Test
     @DisplayName("실패 - checkDuplicateAnswer - 파라미터 null일때")
     void fail_checkDuplicateAnswer_파라미터가_null_일때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectAnswerService.checkDuplicateAnswer(null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectAnswerService.checkDuplicateAnswer(null));
     }
 
     @Test
@@ -68,17 +67,14 @@ class ResourceInspectAnswerServiceTest {
     @Test
     @DisplayName("실패 - checkQuestionAndAnswer - 파라미터 null일때")
     void fail_checkQuestionAndAnswer_파라미터가_null_일때() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectAnswerService.checkQuestionAndAnswer(null, null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectAnswerService.checkQuestionAndAnswer(null, null));
 
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectAnswerService.checkQuestionAndAnswer(Collections.emptyList(), null);
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectAnswerService.checkQuestionAndAnswer(Collections.emptyList(), null));
 
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            resourceInspectAnswerService.checkQuestionAndAnswer(null, Collections.emptyList());
-        });
+        Assertions.assertThrows(NullPointerException.class,
+                () -> resourceInspectAnswerService.checkQuestionAndAnswer(null, Collections.emptyList()));
     }
 
     @Test
