@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Objects;
-
 import static lombok.AccessLevel.PRIVATE;
 
 @Getter

@@ -16,13 +16,13 @@ public class FileReaderAnswerService {
                     "(\\s*)(?<groupId>[0-9]+)," +
                     "(\\s*)(?<questionId>[0-9]+)," +
                     "(\\s*)(?<answerId>[0-9]+)," +
-                    "(\\s*)(?<answer>.*)$");;
+                    "(\\s*)(?<answer>.*)$");
 
 
     private String[] splitSurveyQuestionAnswerLine(String line) {
         Matcher m = fileLineSplitPattern.matcher(line);
 
-        while(m.find()) {
+        if (m.find()) {
             return new String [] {
                     m.group("surveyId"),
                     m.group("groupId"),

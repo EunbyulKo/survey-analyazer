@@ -1,11 +1,11 @@
 package org.silverstar.service;
 
-import org.silverstar.model.*;
+import org.silverstar.model.SurveyQuestion;
+import org.silverstar.model.SurveyQuestionId;
 import org.silverstar.type.FileDataType;
 import org.silverstar.type.FileType;
 import org.silverstar.util.FileReaderUtil;
 
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,7 +20,7 @@ public class FileReaderQuestionService {
     private String[] splitSurveyQuestionLine(String line) {
         Matcher m = fileLineSplitPattern.matcher(line);
 
-        while(m.find()) {
+        if (m.find()) {
             return new String [] {
                     m.group("surveyId"),
                     m.group("groupId"),

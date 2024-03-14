@@ -1,12 +1,10 @@
 package org.silverstar.service;
 
-import org.silverstar.model.*;
+import org.silverstar.model.SurveyBase;
 import org.silverstar.type.FileDataType;
 import org.silverstar.type.FileType;
 import org.silverstar.util.FileReaderUtil;
 
-import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FileReaderSurveyService {

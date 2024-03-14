@@ -37,7 +37,7 @@ public class ResourceInspectAnswerService {
                         .questionId(answer.getId().getQuestionId())
                         .build())
                 .filter(answerId -> !questionsIds.contains(answerId))
-                .collect(Collectors.toSet());;
+                .collect(Collectors.toSet());
 
         if (!noQuestionIds.isEmpty()) {
             log.warn("checkSurveyAndQuestion : " + noQuestionIds.size());
