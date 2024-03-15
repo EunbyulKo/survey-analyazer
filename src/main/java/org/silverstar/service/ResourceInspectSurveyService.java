@@ -21,7 +21,10 @@ public class ResourceInspectSurveyService {
 
         if (count > 0) {
             log.warn("checkDuplicateSurvey : " + count);
-            log.warn("checkDuplicateSurvey : " + map.keySet().stream().limit(5).toList());
+            log.warn("checkDuplicateSurvey : " +
+                    map.entrySet().stream()
+                    .filter(e -> e.getValue() > 1)
+                    .limit(5).toList());
         }
 
         return count;

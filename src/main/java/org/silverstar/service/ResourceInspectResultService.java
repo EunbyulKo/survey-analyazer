@@ -85,7 +85,6 @@ public class ResourceInspectResultService {
 
         if (count > 0) {
             log.warn("checkTargetIdAndUserId : " + count);
-            log.warn("checkTargetIdAndUserId : " + map.keySet().stream().limit(5).toList());
         }
 
         return count;

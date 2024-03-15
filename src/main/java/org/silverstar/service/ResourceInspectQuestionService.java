@@ -22,7 +22,10 @@ public class ResourceInspectQuestionService {
 
         if (count > 0) {
             log.warn("checkDuplicateQuestion : " + count);
-            log.warn("checkDuplicateQuestion : " + map.keySet().stream().limit(5).toList());
+            log.warn("checkDuplicateQuestion : " +
+                    map.entrySet().stream()
+                    .filter(e -> e.getValue() > 1)
+                    .limit(5).toList());
         }
 
         return count;

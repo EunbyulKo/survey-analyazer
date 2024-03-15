@@ -107,4 +107,27 @@ class ResourceInspectResultServiceTest {
 
     }
 
+    @Test
+    @DisplayName("성공 - checkTargetIdAndUserId - 일대일 매칭되지 않을 때")
+    void success_checkTargetIdAndUserId_일대일_매칭되지_않을때() {
+        List<SurveyResult> results = new ArrayList<>();
+        results.add(SurveyResult.builder().targetId(1).uesrId("1").build());
+        results.add(SurveyResult.builder().targetId(1).uesrId("2").build());
+        results.add(SurveyResult.builder().targetId(2).uesrId("2").build());
+
+        Assertions.assertEquals(1,
+                resourceInspectResultService.checkTargetIdAndUserId(results));
+    }
+
+    @Test
+    @DisplayName("성공 - checkTargetIdAndUserId - 일대일 매칭될 때")
+    void success_checkTargetIdAndUserId_일대일_매칭될때() {
+        List<SurveyResult> results = new ArrayList<>();
+        results.add(SurveyResult.builder().targetId(1).uesrId("1").build());
+        results.add(SurveyResult.builder().targetId(2).uesrId("2").build());
+
+        Assertions.assertEquals(0,
+                resourceInspectResultService.checkTargetIdAndUserId(results));
+    }
+
 }
